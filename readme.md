@@ -15,7 +15,7 @@ their respective franchises, gaming hardware, and the companies involved.
   Password: admin
 
 
-![Home page](screenshot1.png)
+![Home page](screenshot1.jpg)
 
 
 ## Server Requirements ##
