@@ -1,0 +1,65 @@
+
+            <div class="container">
+              <center>
+                <br>
+                <h1 style="color:black;">Platforms</h1>
+                <br><br>
+                <div class="form-group row">
+                  <div class="col-2">
+
+                    </div>
+                <div class="col-8">
+                  <a href="#">
+                    <div class="card bg-dark text-white">
+                      <img src="<?php echo base_url('images/gameupdates/bf.jpg'); ?>" alt="Action" class="card-img">
+                      <div class="card-img-overlay ovl">
+                        <h1 class="card-title" style="margin-top:140px" align="center">PC</h1>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                </div>
+                <br><br>
+                <div class="form-group row">
+                  <div class="col-2">
+
+                    </div>
+                <div class="col-8">
+                  <a href="#">
+                    <div class="card bg-dark text-white">
+                      <img src="<?php echo base_url('images/gameupdates/car.jpg'); ?>" alt="Action" class="card-img ">
+                      <div class="card-img-overlay ovl">
+                        <h1 class="card-title" style="margin-top:140px" align="center">MOBILE</h1>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                </div>
+                <br> <br>
+                <div class="form-group row">
+                  <div class="col-2">
+
+                    </div>
+                <div class="col-8">
+                  <a href="#">
+                    <div class="card bg-dark text-white">
+                      <img src="<?php echo base_url('images/gameupdates/console.png'); ?>" alt="Action" class="card-img">
+                      <div class="card-img-overlay ovl">
+                        <h1 class="card-title" style="margin-top:140px" align="center">CONSOLE</h1>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                </div>
+
+              </center>
+
+            </div>
+          <div class="py-5 vh-100"></div>
+
+          
+        </div>
+</div>

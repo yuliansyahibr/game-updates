@@ -1,0 +1,135 @@
+<div class="container px-5">
+    <div class="row">
+        <div class="col-12 bg-white content-container px-5 border-bottom">
+            <div class="row">
+                <div class="col py-3">
+                    <div class="game-title">
+                        <h2>Final Fantasy VII</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 px-2 py-1 border">
+                    <div class="col py-4 ">
+                        <div class="game-img text-center">
+                            <img src="<?= base_url('images/articles-tn/ff7.jpg') ?>" alt="">
+                        </div>
+                    </div>
+                    <div class="col py-3 game-info">
+                        <div class="info-title">
+                            <h6>Developers</h6>
+                            <hr>
+                        </div>
+                        <a href="" class="">Square Enix</a>
+                    </div>
+
+                    <div class="col py-3 game-info">
+                        <div class="info-title">
+                            <h6>Genres</h6>
+                            <hr>
+                        </div>
+                        <a href="" class="">RPG</a>
+                    </div>
+
+                    <div class="col py-3 game-info">
+                        <div class="info-title">
+                            <h6>Release Date</h6>
+                            <hr>
+                        </div>
+                        <span>31 Januari 1997</span>
+                    </div>
+
+                    <div class="col py-3 game-info">
+                        <div class="info-title">
+                            <h6>Platforms</h6>
+                            <hr>
+                        </div>
+                        <a href="" class="">Playstation</a>
+                    </div>
+                </div>
+                <div class="col py-1">                    
+                    <div class="col pb-5 section">
+                        <div class="section-title">
+                            <h5>Deskripsi</h5>
+                            <hr>
+                        </div>
+                        <div class="section-text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, rerum! Cumque ad esse aut eveniet minima reiciendis veniam laboriosam sunt, ea amet nostrum consequuntur alias iusto debitis distinctio enim? Illo!
+                        </div>
+                    </div>
+                    <div class="col pb-5 section">
+                        <div class="section-title">
+                            <h5>Gameplay</h5>
+                            <hr>
+                        </div>
+                        <div class="section-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, iusto nihil perspiciatis blanditiis reprehenderit et illum voluptatibus voluptatum, ex dolorem eaque unde dolore, odio corrupti distinctio. Qui doloribus itaque nam..
+                        </div>
+                    </div>
+                    <div class="col pb-5 section">
+                        <div class="section-title">
+                            <h5>Sinopsis</h5>
+                            <hr>
+                        </div>
+                        <div class="section-text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi similique eum reprehenderit nobis nulla excepturi animi placeat dicta, ipsum ut beatae voluptas libero ullam laboriosam accusantium nemo architecto sunt rem.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col bg-white pt-5">
+            <div class="row">
+                <div class="col px-5 comments py-5">
+                    <div class="row">
+                        <div class="col">
+                            <h4>0 Comments</h4>
+                        </div>
+                    </div>
+                    <div class="row py-2 comment-wrapper">
+                        <div class="col py-3 comment-box border-bottom">
+                            <div class="row">
+                                <div class="col-2">
+                                    <div class="comment-img mx-auto text-center">
+                                        <img src="<?= base_url('images/profile_pics/user2.jpg') ?>" alt="">
+                                    </div>
+                                </div>
+                                <div class="col comment-detail">
+                                    <h5 class="mb-0">John</h5>
+                                    <small> 10 Juni 2019 7 AM</small>
+                                </div>
+                            </div>
+                            <div class="row row-comment">
+                                <div class="col offset-2 py-3 comment">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus perspiciatis obcaecati magnam vel! Eos fugiat praesentium quibusdam itaque qui vitae aliquid quod fugit et sint in eum quaerat, officiis dolore.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row py-2 comment-wrapper">
+                        <div class="col py-3 comment-box border-bottom">
+                            <div class="row">
+                                <div class="col-2">
+                                    <div class="comment-img mx-auto text-center">
+                                        <img src="<?= base_url('images/profile_pics/mike.jpg') ?>" alt="">
+                                    </div>
+                                </div>
+                                <div class="col comment-detail">
+                                    <h5 class="mb-0">Wick</h5>
+                                    <small> 10 Juni 2019 7 AM</small>
+                                </div>
+                            </div>
+                            <div class="row row-comment">
+                                <div class="col offset-2 py-3 comment">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus perspiciatis obcaecati magnam vel! Eos fugiat praesentium quibusdam itaque qui vitae aliquid quod fugit et sint in eum quaerat, officiis dolore.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

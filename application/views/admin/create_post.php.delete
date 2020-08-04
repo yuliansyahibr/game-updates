@@ -1,0 +1,365 @@
+<?php 
+    $admin = (object) [
+        'nama' => 'Administrator'
+    ];
+
+?>
+<!DOCTYPE html>
+<html lang="en" class="p-toolbar">
+<head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="stylesheet" href= '<?= base_url("assets/css/bootstrap.css") ?>' >
+    <link rel="stylesheet" href= '<?= base_url("assets/css/custom.css") ?>' >
+    <link rel="stylesheet" href= '<?= base_url("assets/css/stickyfooter.css") ?>' >
+    <link rel="stylesheet" href='<?= base_url("assets/css/sidebar.css") ?>'>
+    <link rel="stylesheet" href='<?= base_url("assets/css/adminpanel.css") ?>'>
+    <link rel="stylesheet" href='<?= base_url("assets/fontawesome/css/all.css") ?>'>
+
+  <link rel="stylesheet" href="<?= base_url('assets/froala/css/froala_editor.css') ?>">
+  <link rel="stylesheet" href="<?= base_url('assets/froala/css/froala_style.css') ?>">
+  <link rel="stylesheet" href="<?= base_url('assets/froala/css/plugins/code_view.css') ?>">
+  <link rel="stylesheet" href="<?= base_url('assets/froala/css/plugins/draggable.css') ?>">
+  <link rel="stylesheet" href="<?= base_url('assets/froala/css/plugins/colors.css') ?>">
+  <link rel="stylesheet" href="<?= base_url('assets/froala/css/plugins/emoticons.css') ?>">
+  <link rel="stylesheet" href="<?= base_url('assets/froala/css/plugins/image_manager.css') ?>">
+  <link rel="stylesheet" href="<?= base_url('assets/froala/css/plugins/image.css') ?>">
+  <link rel="stylesheet" href="<?= base_url('assets/froala/css/plugins/line_breaker.css') ?>">
+  <link rel="stylesheet" href="<?= base_url('assets/froala/css/plugins/table.css') ?>">
+  <link rel="stylesheet" href="<?= base_url('assets/froala/css/plugins/char_counter.css') ?>">
+  <link rel="stylesheet" href="<?= base_url('assets/froala/css/plugins/video.css') ?>">
+  <link rel="stylesheet" href="<?= base_url('assets/froala/css/plugins/fullscreen.css') ?>">
+  <link rel="stylesheet" href="<?= base_url('assets/froala/css/plugins/file.css') ?>">
+  <link rel="stylesheet" href="<?= base_url('assets/froala/css/plugins/quick_insert.css') ?>">
+  <link rel="stylesheet" href="<?= base_url('assets/froala/css/plugins/help.css') ?>">
+  <link rel="stylesheet" href="<?= base_url('assets/froala/css/third_party/spell_checker.css') ?>">
+  <link rel="stylesheet" href="<?= base_url('assets/froala/css/plugins/special_characters.css') ?>">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.css">
+
+  <style>
+    /* body {
+      text-align: center;
+    } */
+
+    div#editor {
+        height: 600px;
+      /* width: 80%; */
+      margin: auto;
+      text-align: left;
+    }
+
+    .ss {
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+<div id="main" class="pb-5">
+
+    <div class="side-wrapper">
+        <div class="sidenav-back"></div>
+        <div class="sidenav py-4">
+        <!-- <a href=""><i class="fa fa-tachometer-alt mr-2"></i> Dashboard</a> -->
+        <a href="<?= site_url('Admin/') ?>"><i class="fas fa-thumbtack mr-2"></i> Post</a>
+        <a href=""><i class="fas fa-sticky-note mr-2"></i> Categories</a>
+        <a href=""><i class="fa fa-comments mr-2"></i> Comments</a>
+        </div>
+    </div>
+
+    <div class="main">
+
+        <nav class="position-fixed p-nav shadow-sm">
+            <div class="row mx-0">
+                <div class="col">
+                    <a class="" href="<?php echo base_url('wiki/index'); ?>">
+                    <img src="<?= base_url('images/gameupdates/logo.png') ?>" alt="" height="22">
+                </a>
+                    <a href=""><i class="fa fa-plus"></i> New</a>
+                </div>
+                <div class="col text-right">
+                    <span class="">Hello, <?= $admin->nama ?>!</span>
+                </div>
+
+
+                <div class="collapse navbar-collapse" id="navbarColor02">
+                </div>
+            </div>
+        </nav>
+
+        <!-- ----------------------- -->
+        <div class="content-wrapper">
+        <form id="form"  action="<?= site_url("Admin/publish") ?>" method="post"  enctype="multipart/form-data"> 
+          <input name="id_user" type="text" value="<?= $this->session->userdata('id_user') ?>" hidden>
+          <div class="row my-5">
+            <div class="col pb-2 border-bottom">
+
+              <div class="form-group row">                
+                  <label class="col-2 col-form-label">Judul Game</label>                
+                <div class="col-4">
+                  <input id="judul_game" type="text" class="form-control" name="judul_game" placeholder="Game Title">
+                </div>
+              </div>
+
+              <div class="row form-group">
+              <label class="col-2 col-form-label">Tanggal Rilis</label>
+                <div class="col-3">
+                  <input id="release_date" type="text" class="form-control" name="release_date" placeholder="Release Date (yyyy-mm-dd)" >
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-2 col-form-label">Gambar</label>
+                <div class="col-4">
+                  <input id="img" type="file" class="form-control-file" name="game_img">
+                  <?php 
+                  
+                  ?>
+                  <!-- <div class="input-group input-group-sm">
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="inputGroupFile02">
+                      <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+                    </div>
+                    <div class="input-group-append">
+                      <span class="input-group-text" id="">Upload</span>
+                    </div>
+                  </div> -->
+
+                </div>
+              </div>              
+
+              <div class="row form-group">
+              <label class="col-2 col-form-label">Developer</label>
+                <div class="col-3">
+                  <input id="id_developer" type="text" class="form-control" name="id_developer" placeholder="Developer">
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+            <div class="row mb-3">
+                <!-- <form> -->
+                <div class="col-9">
+
+                    <div class="row mb-3">
+                      <div class="col">
+                        <div id="editor">  
+                        <!-- <form id="form"  action="<?= site_url("Admin/publish") ?>" method="post">  -->
+                            <textarea id='edit' name="konten_artikel" placeholder="Type some text">
+                              
+                            </textarea>
+                            <!-- <input id="judul_konten" name="judul_konten" type="text" hidden> -->
+                        <!-- </form> -->
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- <div class="row mb-3">
+                      <div class="col">
+                        <div id="editor2" style="">  
+                            <textarea id='edit2' name="isi_konten[]" placeholder="Type some text">                                
+                            </textarea>
+                        </div>
+                      </div>
+                    </div> -->
+                </div>
+                <div class="col border bg-white shadow py-4 align-self-start">
+                    <div class="row border-bottom mb-3">
+                        <div class="col"> <h6>Publish</h6></div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-left">
+                        <a  id="preview-link" onclick="" href="<?= site_url('Games/preview/')?>" ><button id="prev-btn" type="button" class="btn btn-secondary border-0 rounded-0">Preview</button></a>
+                          <!-- <a class="btn btn-secondary border-0 rounded-0"> Preview </a> -->
+                        </div>
+                        <div class="col text-right">
+                            <button id="publish-btn" class="btn btn-info border-0 rounded-0">Publish</button>
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+
+
+            <form id="form2" action="<?= site_url("Admin/preview") ?>" method="post">
+              <textarea name="isi_konten" id="preview-text" cols="30" rows="10" hidden></textarea>
+            </form>
+
+            <div class="row mb-3">
+                <div class="col-8 mx-auto">
+                <div id="preview" class="fr-view">
+                    <p>Live Preview</p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="<?=  base_url('assets/js/jquery-3.4.1.min.js') ?>"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/mode/xml/xml.min.js"></script>
+
+  <script type="text/javascript" src="<?= base_url('assets/froala/js/froala_editor.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= base_url('assets/froala/js/plugins/align.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= base_url('assets/froala/js/plugins/char_counter.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= base_url('assets/froala/js/plugins/code_beautifier.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= base_url('assets/froala/js/plugins/code_view.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= base_url('assets/froala/js/plugins/colors.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= base_url('assets/froala/js/plugins/draggable.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= base_url('assets/froala/js/plugins/emoticons.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= base_url('assets/froala/js/plugins/entities.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= base_url('assets/froala/js/plugins/file.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= base_url('assets/froala/js/plugins/font_size.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= base_url('assets/froala/js/plugins/font_family.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= base_url('assets/froala/js/plugins/fullscreen.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= base_url('assets/froala/js/plugins/image.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= base_url('assets/froala/js/plugins/image_manager.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= base_url('assets/froala/js/plugins/line_breaker.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= base_url('assets/froala/js/plugins/inline_style.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= base_url('assets/froala/js/plugins/link.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= base_url('assets/froala/js/plugins/lists.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= base_url('assets/froala/js/plugins/paragraph_format.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= base_url('assets/froala/js/plugins/paragraph_style.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= base_url('assets/froala/js/plugins/quick_insert.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= base_url('assets/froala/js/plugins/quote.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= base_url('assets/froala/js/plugins/table.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= base_url('assets/froala/js/plugins/save.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= base_url('assets/froala/js/plugins/url.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= base_url('assets/froala/js/plugins/video.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= base_url('assets/froala/js/plugins/help.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= base_url('assets/froala/js/plugins/print.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= base_url('assets/froala/js/third_party/spell_checker.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= base_url('assets/froala/js/plugins/special_characters.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= base_url('assets/froala/js/plugins/word_paste.min.js') ?>"></script>
+
+  <script>
+    (function () {
+
+      FroalaEditor.DefineIcon('headline', {NAME: 'Section Head', template: 'text'})
+      FroalaEditor.RegisterCommand('headline', {
+        title: 'Insert Section Title',
+        focus: true,
+        undo: true,
+        refreshAfterCallback: true,
+        callback: function () {
+          this.html.insert('<h3 class="headline"> </h3>')
+        }
+      })
+
+      const editorInstance = new FroalaEditor('#edit', {
+        height: 400,
+        enter: FroalaEditor.ENTER_P,
+        placeholderText: null,
+        toolbarButtons: {
+          'moreText': {
+            'buttons': ['bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'fontFamily', 'fontSize', 'textColor', 'backgroundColor', 'inlineClass', 'inlineStyle', 'clearFormatting']
+          },
+          // 'custom': {
+          //   'buttons' : ['headline']
+          // },
+          'moreParagraph': {
+            'buttons': ['headline', 'alignLeft', 'alignCenter', 'formatOLSimple', 'alignRight', 'alignJustify', 'formatOL', 'formatUL', 'paragraphFormat', 'paragraphStyle', 'lineHeight', 'outdent', 'indent', 'quote']
+          },
+          'moreRich': {
+            'buttons': ['insertLink', 'insertImage', 'insertVideo', 'insertTable', 'emoticons', 'fontAwesome', 'specialCharacters', 'embedly', 'insertFile', 'insertHR']
+          },
+          'moreMisc': {
+            'buttons': ['undo', 'redo', 'fullscreen', 'print', 'getPDF', 'spellChecker', 'selectAll', 'html', 'help'],
+            'align': 'right',
+            'buttonsVisible': 2
+          }
+        },
+        events: {
+          initialized: function () {
+            const editor = this;
+            editor.events.bindClick(editor.$('body'), 'button#prev-btn', function () {
+              $('#preview').html(editor.$oel.val());
+              // $('#judul_konten').val()
+              // $('#preview-text').text(editor.$oel.val());
+              // $('#form2').submit();
+            });
+            editor.events.bindClick(editor.$('body'), 'button#publish-btn', function () {
+              // $('#edit').val(editor.$oel.val());
+              // $('#judul_konten').val($('#judul').val());
+              $('#edit').text(editor.$oel.val());
+              // console.log($('#judul_konten').val());
+              $('#form').submit();
+            });
+            window.onload = function()
+            {
+              var judul_game = sessionStorage.getItem('judul_game');
+                if(judul_game !== null){                     
+                    document.getElementById("judul_game").value = judul_game; 
+                }
+                var release_date = sessionStorage.getItem('release_date');
+                if(release_date!== null){                     
+                    document.getElementById("release_date").value = release_date;
+                }
+                var id_developer = sessionStorage.getItem('id_developer');
+                if(id_developer !== null){                     
+                    document.getElementById("id_developer").value = id_developer; 
+                }
+                var judul_konten = sessionStorage.getItem('judul_konten');
+                if(judul_konten !== null){                     
+                    document.getElementById("judul_konten").value = judul_konten; 
+                }
+                var konten = sessionStorage.getItem('konten');
+                if(konten !== null){ 
+                  editor.html.set(konten);
+                }
+            }
+
+            window.onbeforeunload = function() {
+              // sessionStorage.setItem("judul_game", $('#judul_game').val());
+              // sessionStorage.setItem("release_date", $('#release_date').val());
+              // sessionStorage.setItem("id_developer", $('#id_developer').val());
+              // sessionStorage.setItem("judul_konten", $('#judul_konten').val());
+              // sessionStorage.setItem("isi_konten", editor.html.get());                
+            }
+            // editor.el.closest('form').addEventListener('submit', function (e) {
+            // //   console.log(editor.$oel.val())
+            //   e.preventDefault()
+            // //   $('#preview').html(editor.$oel.val())
+            //     $('#edit').val(editor.$oel.val())
+            //     $('#preview').html($('#edit').val())
+            // })            
+          }
+        }
+      })
+
+      $("#prev-btn").on("click", function(e){
+          console.log("preview");
+          sessionStorage.setItem("konten", editorInstance.html.get());
+          sessionStorage.setItem("judul_game", $('#judul_game').val());
+          sessionStorage.setItem("release_date", $('#release_date').val());
+          sessionStorage.setItem("id_developer", $('#id_developer').val());
+        });
+
+      function exit() {
+        sessionStorage.clear();
+      }
+
+      $('a').not( document.getElementById("preview-link")).on("click", function(e) {
+          console.log("exit");
+          exit();
+      });
+
+      $('button').not( document.getElementById("prev-btn")).on("click", function(e) {
+          console.log("exit");
+          exit();
+      })
+
+    })()
+
+
+  </script>
+
+</body>
+</html>
