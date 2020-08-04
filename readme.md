@@ -15,6 +15,9 @@ their respective franchises, gaming hardware, and the companies involved.
   Password: admin
 
 
+![Home page](screenshot1.png)
+
+
 ## Server Requirements ##
 
 PHP version 5.6 or newer is recommended.
